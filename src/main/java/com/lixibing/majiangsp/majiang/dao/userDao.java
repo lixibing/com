@@ -15,4 +15,5 @@ public class userDao {
     private Long  time_up;*/
     private Date time_cr;
     private Date  time_up;
+    private String url;
 }
