@@ -73,6 +73,7 @@
             阅读数：<span th:text="${jhDaos.countt}"></span> |
             发布时间：<span th:text="${#dates.format(jhDaos.time_up,'yyyy-MM-hh')}"></span>
             </span>
+            <span class="label label-info" th:text="${jhDaos.des}">></span>
             <hr>
 
                 <a th:href="@{'/faqi/'+${jhDaos.id}}" >
@@ -115,7 +116,7 @@
                                             <span >1111</span>
                                                                 </h4>
 
-                                                            </div>
+                                             </div>
                              </div>
                              </div>
                  </div>
@@ -156,6 +157,12 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h3>相关问题</h3>
+                <ul>
+                    <li th:each="glwt:${glwt}">
+                           <a th:href="${glwt.id}" th:text="${glwt.title}"></a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </div>

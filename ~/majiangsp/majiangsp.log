@@ -1,0 +1,10 @@
+2020-05-28 16:47:02.638  INFO 27632 --- [main] c.l.m.majiang.MajiangApplication         : Starting MajiangApplication on DESKTOP-DSMKROM with PID 27632 (D:\majiangsp\target\classes started by admin in D:\majiangsp)
+2020-05-28 16:47:02.642  INFO 27632 --- [main] c.l.m.majiang.MajiangApplication         : No active profile set, falling back to default profiles: default
+2020-05-28 16:47:04.258  INFO 27632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8022 (http)
+2020-05-28 16:47:04.290  INFO 27632 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-28 16:47:04.291  INFO 27632 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-28 16:47:04.449  INFO 27632 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-28 16:47:04.449  INFO 27632 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1751 ms
+2020-05-28 16:47:04.890  INFO 27632 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-28 16:47:05.530  INFO 27632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8022 (http) with context path ''
+2020-05-28 16:47:05.539  INFO 27632 --- [main] c.l.m.majiang.MajiangApplication         : Started MajiangApplication in 3.56 seconds (JVM running for 5.525)

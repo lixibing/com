@@ -1,0 +1,77 @@
+2020-05-28 16:47:45.532  INFO 25420 --- [main] c.l.m.majiang.MajiangApplication         : Starting MajiangApplication on DESKTOP-DSMKROM with PID 25420 (D:\majiangsp\target\classes started by admin in D:\majiangsp)
+2020-05-28 16:47:45.537  INFO 25420 --- [main] c.l.m.majiang.MajiangApplication         : No active profile set, falling back to default profiles: default
+2020-05-28 16:47:47.231  INFO 25420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8022 (http)
+2020-05-28 16:47:47.261  INFO 25420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-28 16:47:47.261  INFO 25420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-28 16:47:47.416  INFO 25420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-28 16:47:47.417  INFO 25420 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1786 ms
+2020-05-28 16:47:47.914  INFO 25420 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-28 16:47:48.549  INFO 25420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8022 (http) with context path ''
+2020-05-28 16:47:48.555  INFO 25420 --- [main] c.l.m.majiang.MajiangApplication         : Started MajiangApplication in 3.785 seconds (JVM running for 5.553)
+2020-05-28 16:48:28.945  INFO 16028 --- [main] c.l.m.majiang.MajiangApplication         : Starting MajiangApplication on DESKTOP-DSMKROM with PID 16028 (D:\majiangsp\target\classes started by admin in D:\majiangsp)
+2020-05-28 16:48:28.951  INFO 16028 --- [main] c.l.m.majiang.MajiangApplication         : No active profile set, falling back to default profiles: default
+2020-05-28 16:48:30.443  INFO 16028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8022 (http)
+2020-05-28 16:48:30.470  INFO 16028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-28 16:48:30.470  INFO 16028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-28 16:48:30.587  INFO 16028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-28 16:48:30.587  INFO 16028 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1579 ms
+2020-05-28 16:48:31.010  INFO 16028 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-28 16:48:31.511  INFO 16028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8022 (http) with context path ''
+2020-05-28 16:48:31.517  INFO 16028 --- [main] c.l.m.majiang.MajiangApplication         : Started MajiangApplication in 3.272 seconds (JVM running for 5.03)
+2020-05-28 16:54:50.607  INFO 26316 --- [main] c.l.m.majiang.MajiangApplication         : Starting MajiangApplication on DESKTOP-DSMKROM with PID 26316 (D:\majiangsp\target\classes started by admin in D:\majiangsp)
+2020-05-28 16:54:50.612  INFO 26316 --- [main] c.l.m.majiang.MajiangApplication         : No active profile set, falling back to default profiles: default
+2020-05-28 16:54:52.291  INFO 26316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8022 (http)
+2020-05-28 16:54:52.331  INFO 26316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-28 16:54:52.332  INFO 26316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-28 16:54:52.532  INFO 26316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-28 16:54:52.532  INFO 26316 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1844 ms
+2020-05-28 16:54:53.172  INFO 26316 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-28 16:54:53.705  INFO 26316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8022 (http) with context path ''
+2020-05-28 16:54:53.709  INFO 26316 --- [main] c.l.m.majiang.MajiangApplication         : Started MajiangApplication in 3.994 seconds (JVM running for 6.116)
+2020-05-28 16:54:58.577  INFO 26316 --- [http-nio-8022-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-28 16:54:58.577  INFO 26316 --- [http-nio-8022-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-28 16:54:58.583  INFO 26316 --- [http-nio-8022-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-05-28 16:54:58.614  INFO 26316 --- [http-nio-8022-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-28 16:54:58.751  INFO 26316 --- [http-nio-8022-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-28 16:55:36.122  INFO 16748 --- [main] c.l.m.majiang.MajiangApplication         : Starting MajiangApplication on DESKTOP-DSMKROM with PID 16748 (D:\majiangsp\target\classes started by admin in D:\majiangsp)
+2020-05-28 16:55:36.128  INFO 16748 --- [main] c.l.m.majiang.MajiangApplication         : No active profile set, falling back to default profiles: default
+2020-05-28 16:55:37.400  INFO 16748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8022 (http)
+2020-05-28 16:55:37.426  INFO 16748 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-28 16:55:37.426  INFO 16748 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-28 16:55:37.606  INFO 16748 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-28 16:55:37.606  INFO 16748 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1417 ms
+2020-05-28 16:55:38.151  INFO 16748 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-28 16:55:38.819  INFO 16748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8022 (http) with context path ''
+2020-05-28 16:55:38.833  INFO 16748 --- [main] c.l.m.majiang.MajiangApplication         : Started MajiangApplication in 3.155 seconds (JVM running for 4.974)
+2020-05-28 16:55:47.992  INFO 16748 --- [http-nio-8022-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-28 16:55:47.993  INFO 16748 --- [http-nio-8022-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-28 16:55:48.001  INFO 16748 --- [http-nio-8022-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-05-28 16:55:48.044  INFO 16748 --- [http-nio-8022-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-28 16:55:48.189  INFO 16748 --- [http-nio-8022-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-28 16:55:48.209 DEBUG 16748 --- [http-nio-8022-exec-3] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.209 DEBUG 16748 --- [http-nio-8022-exec-1] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.214 DEBUG 16748 --- [http-nio-8022-exec-2] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.222 DEBUG 16748 --- [http-nio-8022-exec-5] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.228 DEBUG 16748 --- [http-nio-8022-exec-4] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.242 DEBUG 16748 --- [http-nio-8022-exec-2] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.242 DEBUG 16748 --- [http-nio-8022-exec-3] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.242 DEBUG 16748 --- [http-nio-8022-exec-4] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.242 DEBUG 16748 --- [http-nio-8022-exec-1] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.242 DEBUG 16748 --- [http-nio-8022-exec-5] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.263 DEBUG 16748 --- [http-nio-8022-exec-5] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0
+2020-05-28 16:55:48.263 DEBUG 16748 --- [http-nio-8022-exec-1] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0
+2020-05-28 16:55:48.263 DEBUG 16748 --- [http-nio-8022-exec-3] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0
+2020-05-28 16:55:48.263 DEBUG 16748 --- [http-nio-8022-exec-4] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0
+2020-05-28 16:55:48.263 DEBUG 16748 --- [http-nio-8022-exec-2] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0
+2020-05-28 16:55:48.309 DEBUG 16748 --- [http-nio-8022-exec-6] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.310 DEBUG 16748 --- [http-nio-8022-exec-6] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.312 DEBUG 16748 --- [http-nio-8022-exec-6] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0
+2020-05-28 16:55:48.339 DEBUG 16748 --- [http-nio-8022-exec-7] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.339 DEBUG 16748 --- [http-nio-8022-exec-7] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.340 DEBUG 16748 --- [http-nio-8022-exec-7] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0
+2020-05-28 16:55:48.388 DEBUG 16748 --- [http-nio-8022-exec-8] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.388 DEBUG 16748 --- [http-nio-8022-exec-8] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.389 DEBUG 16748 --- [http-nio-8022-exec-8] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0
+2020-05-28 16:55:48.413 DEBUG 16748 --- [http-nio-8022-exec-9] c.l.m.majiang.mapper.userMapper.select   : ==>  Preparing: select * from user where token =? 
+2020-05-28 16:55:48.417 DEBUG 16748 --- [http-nio-8022-exec-9] c.l.m.majiang.mapper.userMapper.select   : ==> Parameters: 7db25e7e-fc75-43e6-8388-65d1839cf737(String)
+2020-05-28 16:55:48.419 DEBUG 16748 --- [http-nio-8022-exec-9] c.l.m.majiang.mapper.userMapper.select   : <==      Total: 0

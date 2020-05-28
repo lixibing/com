@@ -5,6 +5,7 @@ import com.lixibing.majiangsp.majiang.dao.questDao;
 import com.lixibing.majiangsp.majiang.dao.userDao;
 import com.lixibing.majiangsp.majiang.mapper.questMapper;
 import com.lixibing.majiangsp.majiang.mapper.userMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@Slf4j
 public class Lixibingcontroller {
 
     @Autowired
@@ -30,6 +32,7 @@ public class Lixibingcontroller {
     public String lixibing(HttpServletRequest request,Model model,
                            @RequestParam(value = "page",defaultValue = "1") Integer page
                             ,@RequestParam(value = "size",defaultValue = "5") Integer size){
+        log.info("123456789");
         Integer pagetop = size*(page-1);
         Cookie[] cookies= request.getCookies();
         if (cookies !=null){
@@ -116,6 +119,7 @@ public class Lixibingcontroller {
         model.addAttribute("des",list.get(0).get("des"));
         model.addAttribute("tag",list.get(0).get("tag"));
         model.addAttribute("tag",list.get(0).get("id"));
+
         return "faqi";
     }
 }

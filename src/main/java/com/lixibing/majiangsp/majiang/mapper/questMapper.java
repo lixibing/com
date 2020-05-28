@@ -37,4 +37,7 @@ public interface questMapper {
 
     @Update("update quest set countt= COUNTT +1 where id =#{id}" )
     void inyds(@Param(value = "id")Integer id);
+
+    @Select("select  id, title ,tag from quest  where tag regexp #{tag} and id!=#{id}")
+    List<Map> getBq(@Param(value = "tag") String tag,@Param(value = "id")Integer id);
 }

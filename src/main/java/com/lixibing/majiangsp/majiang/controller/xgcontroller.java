@@ -32,6 +32,10 @@ public class xgcontroller {
         List<Map> list =commentMapper.getById1(id);
         model.addAttribute("jhDaos",questDao.get(0));
         model.addAttribute("list",list);
+        String tag=(String) questDao.get(0).get("tag");
+        List<Map> glwt = questMapper.getBq(tag,id);
+        model.addAttribute("glwt",glwt);
+        System.out.println(glwt);
         return "xg";
     }
 }
