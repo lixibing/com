@@ -1,19 +1,20 @@
 package com.lixibing.majiangsp.majiang.controller;
 
+import com.lixibing.majiangsp.majiang.dao.jhDao;
 import com.lixibing.majiangsp.majiang.dao.questDao;
 import com.lixibing.majiangsp.majiang.dao.userDao;
 import com.lixibing.majiangsp.majiang.mapper.questMapper;
 import com.lixibing.majiangsp.majiang.mapper.userMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class Lixibingcontroller {
@@ -24,8 +25,12 @@ public class Lixibingcontroller {
     @Autowired
     private questMapper questMapper;
 
+
     @RequestMapping("/")
-    public String lixibing(HttpServletRequest request){
+    public String lixibing(HttpServletRequest request,Model model,
+                           @RequestParam(value = "page",defaultValue = "1") Integer page
+                            ,@RequestParam(value = "size",defaultValue = "5") Integer size){
+        Integer pagetop = size*(page-1);
         Cookie[] cookies= request.getCookies();
         if (cookies !=null){
             for (Cookie c :cookies){
@@ -37,12 +42,15 @@ public class Lixibingcontroller {
                     }
                     break;
                 }
-
-
             }
+
         }
-
-
+        userDao userDao =(userDao) request.getSession().getAttribute("user");
+        System.out.println(userDao);
+        List<Map> jhDaos =  questMapper.list(pagetop,size);
+        System.out.println("999");
+        System.out.println(jhDaos.toString());
+        model.addAttribute("jhDaos",jhDaos);
         return "lixibing";
     }
     @GetMapping("/faqi")
@@ -55,6 +63,7 @@ public class Lixibingcontroller {
     public String lixibing2(@RequestParam(value = "title",required = false) String title,
                             @RequestParam(value = "des",required = false) String des,
                             @RequestParam(value = "tag",required = false) String tag,
+                            @RequestParam(value = "id",required = false) Integer id,
                             HttpServletRequest request,
                             Model model){
         System.out.println("666");
@@ -74,31 +83,39 @@ public class Lixibingcontroller {
             return "/faqi";
         }
 
-        userDao userDao = null ;
-        Cookie[] cookies= request.getCookies();
-        for (Cookie c :cookies){
-            if (c.getName().equals("token")){
-                String token = c.getValue();
-                 userDao =userMapper.select(token);
-                if (userDao != null){
-                    request.getSession().setAttribute("user",userDao);
-                }
-                break;
-            }
-        }
+
+        userDao userDao =(userDao) request.getSession().getAttribute("user");
+        System.out.println(userDao);
         if (userDao == null){
             model.addAttribute("mode","请重新登录");
             return "faqi";
         }
         System.out.println(title);
         questDao questDao = new questDao();
-        questDao.setTag(title);
-        questDao.setTitle(tag);
+        questDao.setTag(tag);
+        questDao.setTitle(title);
         questDao.setDes(des);
         questDao.setTime_cr(new java.util.Date());
         questDao.setTime_up(new java.util.Date());
         questDao.setCreator(userDao.getId());
-        questMapper.insert(questDao);
+        if (id != null){
+            questDao.setId(id);
+            questMapper.update(questDao);
+        }else{
+            questMapper.insert(questDao);
+        }
+
         return "redirect:/";
+    }
+    @GetMapping("/faqi/{id}")
+    public String xiugai(@PathVariable(name = "id") Integer id,
+                            HttpServletRequest request,
+                            Model model){
+        List<Map> list=questMapper.getById(id);
+        model.addAttribute("title",list.get(0).get("title"));
+        model.addAttribute("des",list.get(0).get("des"));
+        model.addAttribute("tag",list.get(0).get("tag"));
+        model.addAttribute("tag",list.get(0).get("id"));
+        return "faqi";
     }
 }

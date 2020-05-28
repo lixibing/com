@@ -1,29 +1,20 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>兵</title>
+    <title th:text="${sname}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js" type="application/javascript"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
 </head>
-<script>
-    window.onload = function () {
-        var able =window.localStorage.getItem("able");
-        if (able == "true"){
-            window.close();
-            window.localStorage.removeItem("able");
-        }
-      }
-</script>
 <body>
 <div th:insert="~{nav :: nav}"></div>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <h2><span class="glyphicon glyphicon-list" aria-hidden="true"></span>发现</h2>
+            <h2><span th:text="${sname}"></span></h2>
             <hr>
             <div class="media" th:each="jhDaos:${jhDaos}">
                 <div class="media-left">
@@ -32,10 +23,7 @@
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading" >
-                        <a th:href="@{'xg/'+${jhDaos.id}}" th:text="${jhDaos.title}">
-                        </a>
-                    </h4>
+                    <h4 class="media-heading" th:text="${jhDaos.title}"></h4>
                     <span th:text="${jhDaos.des}"></span><br>
                     <span style="font-size: 12px;font-weight: normal;color: #999;"><span th:text="${jhDaos.view_count}"></span>个回复。<span th:text="${jhDaos.countt}"></span>次浏览。<span th:text="${#dates.format(jhDaos.time_up,'yyyy-MM-hh')}"></span></span>
 
@@ -48,7 +36,7 @@
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li ><a href="/">1</a></li>
+                    <li ><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
@@ -62,11 +50,17 @@
             </nav>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <h3>888</h3>
-           66666
-            435dsadad
-            4545
-            4545rerew
+            <div class="list-group">
+                <a href="/wdwt/wt"  th:class="${s == 'wdwt'}?'active list-group-item ':'list-group-item '">
+                    我的问题
+                </a>
+                <a href="/wdwt/zxhf"  th:class="${s == 'zxhf'}?'active list-group-item ':'list-group-item '">
+                    最新回复
+                    <span class="badge">14</span>
+                </a>
+
+            </div>
+
         </div>
     </div>
 </div>

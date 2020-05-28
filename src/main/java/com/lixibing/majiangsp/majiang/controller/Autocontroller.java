@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.UUID;
 
@@ -38,9 +37,9 @@ public class Autocontroller {
 
     @GetMapping("/callback")
     public String callbock(@RequestParam(name = "code") String code
-                            , @RequestParam(name = "state") String state
-                            , HttpServletRequest request
-                            , HttpServletResponse response){
+            , @RequestParam(name = "state") String state
+            , HttpServletRequest request
+            , HttpServletResponse response){
         githubdao gitto = new githubdao();
         gitto.setClient_id(clientid);
         gitto.setClient_secret(clientsecret);
@@ -48,6 +47,7 @@ public class Autocontroller {
         gitto.setRedirect_uri(redirecturi);
         gitto.setState(state);
         String ustoken = githubPro.gettock(gitto);
+        System.out.println(ustoken);
         githubuser user =githubPro.getuser(ustoken);
         System.out.println(user);
         githubuser s =new githubuser();
@@ -69,13 +69,35 @@ public class Autocontroller {
             userDao.setTime_up(new java.util.Date());
             System.out.println(System.currentTimeMillis());
             userDao.setUrl("https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1151834211,158545213&fm=26&gp=0.jpg");
-            userMapper.insert(userDao);
+
+            String name =s.getName();
+            String st = userMapper.findtoke(name);
+
+
+            System.out.println("st"+st);
+            if (st == null){
+                userMapper.insert(userDao);
+            }else{
+
+            }
+            userDao userDao1 = userMapper.selectto(name);
             response.addCookie(new Cookie("token",token));
-            request.getSession().setAttribute("user",user);
+            request.getSession().setAttribute("user",userDao1);
             return "redirect:/";
         }else {
             return "redirect:/";
         }
 
+    }
+    @GetMapping("/out")
+    public String out(
+             HttpServletRequest request
+            , HttpServletResponse response){
+        System.out.println("88");
+        request.getSession().removeAttribute("user");
+        Cookie cookie = new Cookie("token",null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
     }
 }

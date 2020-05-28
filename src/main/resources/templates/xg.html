@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${jhDaos.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+</head>
+<script>
+    function post() {
+      var puest_id =$("#puest_id").val();
+      var content =$("#content").val();
+
+      $.ajax({
+      type:"post",
+      url:"/comment",
+
+      contentType:"application/json",
+      data:JSON.stringify({
+          "puest_id":puest_id,
+          "content":content,
+          "type":1
+      }),
+      success:function(res) {
+        console.log(res.code);
+        if (res.code == "0000"){
+            $("#seuh").hide();
+            alert(res.message)
+        }else{
+            if (res.code == "2003") {
+                var isac =confirm(res.message);
+                if (isac){
+                    window.open("https://github.com/login/oauth/authorize?client_id=Iv1.9bab931dd2352d22&redirect_uri=http://192.168.16.167:8022/callback&scope=user&state=1");
+                    window.localStorage.setItem("able",true);
+                }
+            }
+            alert(res.message)
+        }
+      },
+      dataType:"json"
+      });
+
+    }
+    function ejpl(e) {
+     var data= e.getAttribute("data");
+     var lists = $("#list-"+data);
+
+     var datato = e.getAttribute("datato");
+     if (datato){
+         lists.removeClass("in");
+         e.removeAttribute("datato");
+     }else{
+         lists.addClass("in");
+         e.setAttribute("datato","in");
+     }
+
+
+       console.log(data)
+    }
+</script>
+<body>
+<div th:insert="~{nav :: nav}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4><span th:text="${jhDaos.title}"></span></h4>
+            <span style="font-size: 12px;font-weight: normal;color: #999;">
+            作者：<span th:text="${jhDaos.name}"></span> |
+            阅读数：<span th:text="${jhDaos.countt}"></span> |
+            发布时间：<span th:text="${#dates.format(jhDaos.time_up,'yyyy-MM-hh')}"></span>
+            </span>
+            <hr>
+
+                <a th:href="@{'/faqi/'+${jhDaos.id}}" >
+                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                编辑</a>
+
+        </div>
+        <h3>
+        <span th:text="${jhDaos.view_count}"> </span>个回复
+</h3>
+<hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="media" th:each="list:${list}">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object img-rounded" style="width: 50px;height: 50px;"  src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1151834211,158545213&fm=26&gp=0.jpg" >
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading" >
+<span th:text="${list.name}"></span>
+                    </h4>
+<span th:text="${list.content}"></span>
+                </div>
+
+                <span class="glyphicon glyphicon-thumbs-up "></span>
+                <span class="glyphicon glyphicon-comment" th:data="${list.id}" onclick="ejpl(this)"></span>
+                <span th:text="${#dates.format(list.time_up,'yyyy-MM-hh')}"></span>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse"
+                th:id="${'list-'+list.id}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="media" th:each="list:${list}">
+                                            <div class="media-left">
+                                                <a href="#">
+                                                    <img class="media-object img-rounded" style="width: 50px;height: 50px;"  src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1151834211,158545213&fm=26&gp=0.jpg" >
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                                <h4 class="media-heading" >
+                                            <span >1111</span>
+                                                                </h4>
+
+                                                            </div>
+                             </div>
+                             </div>
+                 </div>
+            </div>
+
+</div>
+
+
+        <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+        <div id="seuh" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+            <div>
+                <img class="media-object img-rounded" style="width: 50px;height: 50px;"  src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1151834211,158545213&fm=26&gp=0.jpg" >
+            </div>
+            </div>
+            <input type="hidden" id="puest_id" th:value="${jhDaos.id}">
+             <textarea class="form-control" rows="3" id="content"></textarea>
+
+            <button type="button" class="btn btn-success" style="float: right" onclick="post()">回复</button>
+
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <img class="media-object img-rounded" style="width: 50px;height: 50px;"  src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1151834211,158545213&fm=26&gp=0.jpg" >
+                <h3>发起人</h3>
+                <div class="media-body">
+                                    <h4 class="media-heading" >
+                                        <span th:href="@{'xg/'+${jhDaos.id}}" th:text="${jhDaos.title}">
+                                        </span>
+                                    </h4>
+                                    <span th:text="${jhDaos.des}"></span><br>
+                                    <span style="font-size: 12px;font-weight: normal;color: #999;"><span th:text="${jhDaos.view_count}"></span>个回复。<span th:text="${jhDaos.countt}"></span>次浏览。<span th:text="${#dates.format(jhDaos.time_up,'yyyy-MM-hh')}"></span></span>
+
+                                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h3>相关问题</h3>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -6,6 +6,10 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
 
 @Mapper
 @Repository
@@ -19,4 +23,10 @@ public interface userMapper {
 
     @Select("select * from user where token =#{token}")
     userDao select(@Param("token") String token);
+
+    @Select("select name from user where name =#{name}")
+    String findtoke(@Param("name")String name);
+
+    @Select("select * from user where name =#{name}")
+    userDao selectto(@Param("name") String name);
 }
